@@ -1,0 +1,13 @@
+logs/
+tmp/
+repo/
+docker_res.json
+docker_res.json.bak
+
+# Python build/cache artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/

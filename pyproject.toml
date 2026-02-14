@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shovel"
+version = "0.1.0"
+description = "Generate Docker environment configs for SWE-bench instances"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "claude-agent-sdk",
+  "unidiff",
+  "datasets",
+]
+
+[project.scripts]
+shovel = "shovel.cli:main"
+
+[tool.setuptools]
+packages = ["shovel"]
