@@ -5,12 +5,19 @@
 - `eval_script`
 - `setup_scripts.setup_repo.sh`
 
-项目会并发处理实例，自动克隆仓库、调用 Agent 生成配置，并在失败时回退到规则化的 fallback 方案。
+项目会并发处理实例，自动克隆仓库、调用 Agent 生成配置。
 
 ## 安装
 
 ```bash
 pip install -e .
+```
+
+## API 配置
+
+```bash
+export ANTHROPIC_BASE_URL=your_base_url
+export ANTHROPIC_API_KEY=your_api_key
 ```
 
 ## 快速开始
@@ -66,6 +73,5 @@ shovel --help
 
 ## 运行说明
 
-- 当 Agent 生成失败时，程序会自动生成 fallback 配置，避免实例丢失。
 - 程序会在每个实例完成后立即落盘到 `--output`，中断后可配合 `--resume` 继续。
 - `eval_script` 会确保包含 `OMNIGRIL_EXIT_CODE` 输出，以兼容评测框架判定逻辑。
